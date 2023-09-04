@@ -1,8 +1,7 @@
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Main {
+public class TestingLists {
     public static void main(String[] args) {
         String lesson1 = "Getting to Know List";
         String lesson2 = "Modelling the Class Lesson";
