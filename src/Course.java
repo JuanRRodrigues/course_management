@@ -40,11 +40,16 @@ public class Course {
         return "[Curso:"+ this.getName()+",tempo total:"+ this.getTimeTotal()+ ", aulas: ["+ this.getLessons()+"] ]";
     }
 
-    public void matricula(Student student) {
+    public void enrollment(Student student) {
         this.students.add(student);
     }
 
     public Set<Student> getStudents() {
         return Collections.unmodifiableSet(students);
     }
+
+    public boolean isEnrolled(Student student) {
+        return this.students.contains(student);
+    }
+
 }

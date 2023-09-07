@@ -14,15 +14,25 @@ public class TestingCourseWithStudent {
         Student a2 = new Student("Guilherme Silveira", 5617);
         Student a3 = new Student("mauricio Aniche", 17645);
 
-        javaColections.matricula(a1);
-        javaColections.matricula(a2);
-        javaColections.matricula(a3);
+        javaColections.enrollment(a1);
+        javaColections.enrollment(a2);
+        javaColections.enrollment(a3);
 
         System.out.println("All Enrolled Students: ");
         javaColections.getStudents().forEach(a -> {
             System.out.println(a);
         });
 
+
+        System.out.println("The student" + a1 + "Is Enrolled? ");
+        System.out.println(javaColections.isEnrolled(a1));
+
+        Student turini = new Student("Rodrigo Turini", 314672);
+        System.out.println("E esse Turini, está matriculado: ");
+        System.out.println(javaColections.isEnrolled(turini));
+
+        System.out.println("O a1 é equal ao Turini");
+        System.out.println(a1.equals(turini));
 
     }
 

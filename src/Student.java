@@ -4,6 +4,9 @@ public class Student {
     private int studentNumber;
 
     public Student(String name, int studentNumber){
+        if(name == null){
+            throw new NullPointerException("Name Cannot be null");
+        }
         this.name = name;
         this.studentNumber = studentNumber;
     }
@@ -14,6 +17,17 @@ public class Student {
 
     public int getStudentNumber() {
         return studentNumber;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Student other = (Student) obj;
+        return this.name.equals(other.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return this.name.hashCode();
     }
 
     @Override
