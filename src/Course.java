@@ -1,13 +1,11 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Course {
 
     private String name;
     private String instructor;
     private List<Lesson> lessons = new LinkedList<Lesson>();
+    private Set<Student> students = new HashSet<>();
 
     public Course(String name, String instructor) {
         this.name = name;
@@ -40,5 +38,13 @@ public class Course {
     @Override
     public String toString() {
         return "[Curso:"+ this.getName()+",tempo total:"+ this.getTimeTotal()+ ", aulas: ["+ this.getLessons()+"] ]";
+    }
+
+    public void matricula(Student student) {
+        this.students.add(student);
+    }
+
+    public Set<Student> getStudents() {
+        return Collections.unmodifiableSet(students);
     }
 }
